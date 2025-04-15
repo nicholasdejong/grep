@@ -7,7 +7,6 @@ pub fn find_matches(haystack: &str, regex: &str) -> Vec<usize> {
     let mut matches: Vec<usize> = Vec::new();
     let mut i = 0;
     'outer: while i < haystack.len() {
-        // println!("iter");
         let mut j = 0;
         while j < root.len() {
             if i + j >= haystack.len() {
@@ -21,7 +20,7 @@ pub fn find_matches(haystack: &str, regex: &str) -> Vec<usize> {
             j += 1;
         }
         matches.push(i);
-        i += 1;
+        i += root.len()
     }
     matches
 }
