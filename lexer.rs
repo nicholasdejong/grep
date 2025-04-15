@@ -59,6 +59,7 @@ pub fn lex_str(s: &str) -> Vec<Token> {
             ']' => {
                 if in_charset {
                     tokens.push(CharsetClose);
+                    in_charset = false;
                 } else {
                     tokens.push(Char(']'));
                 }
