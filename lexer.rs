@@ -35,8 +35,9 @@ pub fn lex_str(s: &str) -> Vec<Token> {
                     let prev = tokens.last().unwrap();
                     if *prev == CharsetOpen {
                         tokens.push(NegateCharset);
+                    } else {
+                        tokens.push(Char('^'));
                     }
-                    tokens.push(Char('^'));
                 } else {
                     tokens.push(Beginning);
                 }
